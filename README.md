@@ -8,7 +8,6 @@ A simple AI-powered note search application with login authentication and smart 
 🔍 Smart Search (Top 3 results)
 📂 Text-based data search
 ⚡ Fast and lightweight
-🌐 Deployed online using Streamlit Cloud
 
 🧠 **How It Works**
 User logs in using credentials
@@ -44,18 +43,19 @@ streamlit run app.py
 Deployed on Streamlit Cloud: 👉 https://your-app-name.streamlit.app
 
 🛠️ **Technologies Used**
-Python 🐍
-Streamlit 🎈
+Python 
+Streamlit 
+colab
 NumPy
-(Optional) SentenceTransformers
-(Optional) OpenAI API
+SentenceTransformers
+OpenAI API
 
-🔥 **Future Improvements**
-🤖 Add real AI (RAG + embeddings)
-📄 PDF upload support
-💬 Chat interface
-🌍 Multi-user authentication
-⚡ Faster vector search
+**Future Improvements**
+Add real AI (RAG + embeddings)
+PDF upload support
+Chat interface
+Multi-user authentication
+Faster vector search
 
 👨‍💻 **Author**
 KANISHKA R
