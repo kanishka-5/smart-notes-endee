@@ -1,39 +1,48 @@
 import streamlit as st
-from sklearn.feature_extraction.text import TfidfVectorizer
-import numpy as np
 
-# UI
-st.title("📚 Smart Notes AI")
-st.write("Ask questions from your notes!")
+# ✅ Page config (UI improvement)
+st.set_page_config(page_title="Smart Notes AI", layout="centered")
 
-# Load data
-@st.cache_data
-def load_data():
-    with open("data.txt", "r") as f:
-        return [line.strip() for line in f.readlines() if line.strip()]
+# ---------------- LOGIN FUNCTION ----------------
+def check_login(username, password):
+    with open("auth/users.txt") as f:
+        users = f.readlines()
 
-docs = load_data()
+    for user in users:
+        u, p = user.strip().split(",")
+        if u == username and p == password:
+            return True
+    return False
 
-# Create TF-IDF vectors
-@st.cache_data
-def create_vectors(docs):
-    vectorizer = TfidfVectorizer()
-    vectors = vectorizer.fit_transform(docs)
-    return vectorizer, vectors
 
-vectorizer, doc_vectors = create_vectors(docs)
+# ---------------- SESSION ----------------
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
 
-# Search function
-def search(query):
-    query_vec = vectorizer.transform([query])
-    scores = (doc_vectors @ query_vec.T).toarray()
-    best_idx = np.argmax(scores)
-    return docs[best_idx]
 
-# Input
-query = st.text_input("Enter your question:")
+# ---------------- LOGIN UI ----------------
+if not st.session_state.logged_in:
+    st.title("🔐 Login - Smart Notes AI")
 
-if query:
-    result = search(query)
-    st.success("Answer:")
-    st.write(result)
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if check_login(username, password):
+            st.session_state.logged_in = True
+            st.success("Login successful ✅")
+            st.rerun()
+        else:
+            st.error("Invalid credentials ❌")
+
+# ---------------- AFTER LOGIN ----------------
+else:
+    st.sidebar.success("✅ Logged in")
+    st.sidebar.write("Go to Home / Search")
+
+    if st.sidebar.button("Logout"):
+        st.session_state.logged_in = False
+        st.rerun()
+
+    st.title("📚 Smart Notes AI")
+    st.write("Use sidebar to navigate →")
