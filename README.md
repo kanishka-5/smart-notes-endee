@@ -1,21 +1,21 @@
-🧠 **NeuroNotes AI — Smart Thinking. Faster Answers. ⚡ 🚀 Your Personal Knowledge Engine**
+ **NeuroNotes AI — Smart Thinking. Faster Answers.  Your Personal Knowledge Engine**
 
 A simple AI-powered note search application with login authentication and smart search functionality. Built using Streamlit and deployed on Streamlit Cloud.
 
-🚀 **Features**
-🔐 User Login System
-🏠 Home Page Navigation
-🔍 Smart Search (Top 3 results)
-📂 Text-based data search
-⚡ Fast and lightweight
+ **Features**
+ User Login System
+ Home Page Navigation
+ Smart Search (Top 3 results)
+ Text-based data search
+ Fast and lightweight
 
-🧠 **How It Works**
+ **How It Works**
 User logs in using credentials
 App loads notes from data/data.txt
 User enters a query
 App matches keywords and returns top results
 
-📁 **Project Structure**
+ **Project Structure**
 smart-notes/
 │
 ├── app.py
@@ -28,10 +28,9 @@ smart-notes/
 ├── home.py
 └── search.py
 
-🔐 **Login Credentials**
-Default users:
 
-▶️ **Run Locally**
+
+ **Run Locally**
 
 1. Clone repo
    git clone https://github.com/your-username/smart-notes.git
@@ -39,10 +38,10 @@ Default users:
 cd smart-notes
 streamlit run app.py
 
-🌐 **Live Demo**
-Deployed on Streamlit Cloud: 👉 https://your-app-name.streamlit.app
+**Live Demo**
+Deployed on Streamlit Cloud: https://your-app-name.streamlit.app
 
-🛠️ **Technologies Used**
+ **Technologies Used**
 Python 
 Streamlit 
 colab
@@ -57,9 +56,4 @@ Chat interface
 Multi-user authentication
 Faster vector search
 
-👨‍💻 **Author**
-KANISHKA R
-
-📜 **License**
-This project is open-source and free to use.
 
