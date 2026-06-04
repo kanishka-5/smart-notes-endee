@@ -7,7 +7,7 @@ A simple AI-powered note search application with login authentication and smart 
  Home Page Navigation
  Smart Search (Top 3 results)
  Text-based data search
- Fast and lightweight
+ Fast and lightweight 
 
  **How It Works**
 User logs in using credentials
